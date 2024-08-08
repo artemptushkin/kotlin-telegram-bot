@@ -201,6 +201,11 @@ public final class com/github/kotlintelegrambot/BotKt {
 	public static final fun webhook (Lcom/github/kotlintelegrambot/Bot$Builder;Lkotlin/jvm/functions/Function1;)V
 }
 
+public final class com/github/kotlintelegrambot/UpdateMapper {
+	public fun <init> (Lcom/google/gson/Gson;)V
+	public final fun jsonToUpdate (Ljava/lang/String;)Lcom/github/kotlintelegrambot/entities/Update;
+}
+
 public final class com/github/kotlintelegrambot/dispatcher/Dispatcher {
 	public final fun addErrorHandler (Lcom/github/kotlintelegrambot/dispatcher/handlers/ErrorHandler;)V
 	public final fun addHandler (Lcom/github/kotlintelegrambot/dispatcher/handlers/Handler;)V
@@ -3609,6 +3614,12 @@ public final class com/github/kotlintelegrambot/network/UtilsKt {
 	public static final fun call (Lretrofit2/Call;)Lkotlin/Pair;
 	public static final fun fold (Lkotlin/Pair;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
 	public static synthetic fun fold$default (Lkotlin/Pair;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+}
+
+public final class com/github/kotlintelegrambot/network/serialization/GsonFactory {
+	public static final field INSTANCE Lcom/github/kotlintelegrambot/network/serialization/GsonFactory;
+	public final fun createForApiClient ()Lcom/google/gson/Gson;
+	public final fun createForMultipartBodyFactory ()Lcom/google/gson/Gson;
 }
 
 public abstract class com/github/kotlintelegrambot/types/ConsumableObject {
