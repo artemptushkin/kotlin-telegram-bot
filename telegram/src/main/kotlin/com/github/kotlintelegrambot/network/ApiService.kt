@@ -123,6 +123,7 @@ internal interface ApiService {
         @Field(ApiConstants.REPLY_TO_MESSAGE_ID) replyToMessageId: Long?,
         @Field(ApiConstants.ALLOW_SENDING_WITHOUT_REPLY) allowSendingWithoutReply: Boolean?,
         @Field(ApiConstants.REPLY_MARKUP) replyMarkup: ReplyMarkup?,
+        @Field(ApiConstants.MESSAGE_THREAD_ID) messageThreadId: Long?,
     ): Call<Response<Message>>
 
     @FormUrlEncoded
@@ -956,6 +957,15 @@ internal interface ApiService {
         @Field(ApiConstants.CHAT_ID) chatId: ChatId,
         @Field(ApiConstants.USER_ID) userId: Long,
         @Field(ApiConstants.SetChatAdministratorCustomTitle.CUSTOM_TITLE) customTitle: String,
+    ): Call<Response<Boolean>>
+
+    @FormUrlEncoded
+    @POST("setMessageReaction")
+    fun setMessageReaction(
+        @Field(ApiConstants.CHAT_ID) chatId: ChatId,
+        @Field("message_id") messageId: Long,
+        @Field("reaction") reaction: String?,
+        @Field("is_big") isBig: Boolean?,
     ): Call<Response<Boolean>>
 }
 
